@@ -1,0 +1,13 @@
+{
+  "title": "Docs Meta json",
+  "pages": [
+    "---Overview---",
+    "index",
+
+    "---Features---",
+    "authentication",
+    "components",
+
+    "---Link---"
+  ]
+}

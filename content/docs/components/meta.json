@@ -1,0 +1,19 @@
+{
+  "title": "Components",
+  "pages": [
+    "alert",
+    "badge",
+    "banner",
+    "breadcrumb",
+    "button",
+    "checkbox",
+    "heading",
+    "input",
+    "notification",
+    "radio",
+    "select",
+    "slider",
+    "switch",
+    "textarea"
+  ]
+}
