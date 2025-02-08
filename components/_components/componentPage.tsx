@@ -1,12 +1,5 @@
-// import GridPageLayout from "@/components/_components/GridPageLayout";
-import ComponentPage from "@/page/ComponentPage";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Alerts | Shadw ui",
-  description:
-    "A beautiful collection of alert components built with using Shadcn UI and TailwindCSS.",
-};
+import GridPageLayout from "./GridPageLayout";
+import ComponentDataPage from "./componentDataPage";
 
 const alertDir = "alerts";
 const alertFiles = [
@@ -28,7 +21,7 @@ const alertFiles = [
 
 const fileCount = [...alertFiles].length;
 
-export default function Page() {
+export default function ComponentPage() {
   return (
     <GridPageLayout
       heading="Alerts"
@@ -36,7 +29,7 @@ export default function Page() {
     >
       {alertFiles.map((componentName) => {
         return (
-          <ComponentPage
+          <ComponentDataPage
             key={componentName}
             directory={alertDir}
             componentName={componentName}
