@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { IconCheck, IconCopy } from "@tabler/icons-react";
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 type CodeBlockProps = {
   language?: string;
@@ -25,8 +25,7 @@ type CodeBlockProps = {
 );
 
 export const CodeBlock = ({
-  language,
-  filename,
+  language = "jsx",
   code,
   highlightLines = [],
   tabs = [],
@@ -56,43 +55,25 @@ export const CodeBlock = ({
   return (
     <div className="relative w-full rounded-lg bg-zinc-950 dark:bg-zinc-900 border p-4 font-mono text-sm max-h-[30rem] overflow-auto">
       <div className="flex flex-col gap-2">
-        {tabsExist && (
-          <div className="flex  overflow-x-auto">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`px-3 !py-2 text-xs transition-colors font-sans ${
-                  activeTab === index
-                    ? "text-white"
-                    : "text-zinc-400 hover:text-zinc-200"
-                }`}
-              >
-                {tab.name}
-              </button>
-            ))}
-          </div>
-        )}
-        {!tabsExist && filename && (
-          <div className="flex justify-between items-center py-2">
-            <div className="text-xs text-zinc-400">{filename}</div>
-            <button
-              onClick={copyToClipboard}
-              className="flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-200 transition-colors font-sans"
-            >
-              {copied ? <IconCheck size={14} /> : <IconCopy size={14} />}
-            </button>
-          </div>
-        )}
+        <button
+          onClick={copyToClipboard}
+          className="flex items-center justify-end px-4 text-xs text-zinc-400 hover:text-zinc-200 transition-colors font-sans"
+        >
+          {copied ? (
+            <IconCheck size={18} color="green" />
+          ) : (
+            <IconCopy size={18} className="hover:cursor-pointer" />
+          )}
+        </button>
       </div>
       <SyntaxHighlighter
         language={activeLanguage}
-        style={atomDark}
+        style={darcula}
         customStyle={{
           margin: 0,
           padding: 0,
           background: "transparent",
-          fontSize: "0.875rem", // text-sm equivalent
+          fontSize: "0.9rem", // text-sm equivalent
         }}
         wrapLines={true}
         showLineNumbers={true}
@@ -104,8 +85,7 @@ export const CodeBlock = ({
             display: "block",
             width: "100%",
           },
-        })}
-        PreTag="div"
+        })} 
       >
         {String(activeCode)}
       </SyntaxHighlighter>
