@@ -16,9 +16,9 @@ const ComponentData = async ({
   className?: string;
 }) => {
   const Component = (
-    await import(`@/custom-components/${directory}/${componentName}`)
+    await import(`@/data/components/${directory}/${componentName}`)
   ).default;
-  const source = await readComponentSource(directory, componentName); // I will use in code block
+  const source = await readComponentSource(directory, componentName);
   const capitalizeComponentName =
     componentName.charAt(0).toUpperCase() + componentName.slice(1);
 
@@ -59,10 +59,7 @@ const ComponentData = async ({
             <Component />
           </TabsContent>
 
-          <TabsContent
-            value="code"
-            className=""
-          > 
+          <TabsContent value="code" className="">
             <CodeBlock code={source!} />
           </TabsContent>
         </CardContent>

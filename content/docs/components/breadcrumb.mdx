@@ -1,40 +1,25 @@
 ---
 title: Breadcrumb
-description: Mongo Database
 ---
 
-## Overview
+import ComponentPage from "components/_components/componentPage";
 
-This is a shared convention for organizing your documents.
+The Breadcrumb component is used to display important messages to users. It comes with several sub components to structure the content effectively.
 
-Fumadocs MDX, and other file-system based content sources generate slugs and page trees depending on your file structure.
-Meaning that you can customise the sidebar and other navigation elements by changing the file structure.
+## Installation
 
-## File
+To add the Breadcrumb component to your project, use the Shadcn UI CLI:
 
-A [MDX](https://mdxjs.com) or Markdown file.
-
-### Frontmatter
- 
-
-By default, it includes:
-
-| name          | description                                        |
-| ------------- | -------------------------------------------------- |
-| `title`       | The title of page                                  |
-| `description` | The description of page                            |
-| `icon`        | The name of icon, see [Icons](#icons)              |
-| `full`        | Fill all available space on the page (Fumadocs UI) |
-
-You may extend your content source to add additional properties.
-
-```mdx
----
-title: My Page
-description: Best document ever
-icon: HomeIcon
-full: false
----
-
-## Learn More
+```bash
+npx shadcn@latest add breadcrumb
 ```
+
+## Components
+
+<ComponentPage 
+  directory="breadcrumbs" 
+  files={["breadcrumb-01", "breadcrumb-02", "breadcrumb-03"]} 
+/>
+
+## Github
+Github Repo: [Shadwui](https://github.com/sahilkumardev/shadwui)

@@ -6,8 +6,9 @@ export const readComponentSource = async (
   componentName: string
 ) => {
   const filePath = path.join(
-    process.cwd(), 
-    "custom-components",
+    process.cwd(),
+    "data",
+    "components",
     directory,
     `${componentName}.tsx`
   );
