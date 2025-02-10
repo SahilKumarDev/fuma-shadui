@@ -15,5 +15,6 @@
     "slider",
     "switch",
     "textarea"
-  ]
+  ],
+  "defaultOpen": true
 }

@@ -3,15 +3,19 @@ import path from "path";
 
 export const readComponentSource = async (
   directory: string,
-  componentName: string
+  componentName: string,
+  collection: string
 ) => {
   const filePath = path.join(
     process.cwd(),
     "data",
-    "components",
     directory,
-    `${componentName}.tsx`
+   componentName ,
+    `${collection}.tsx` 
   );
+  console.log('====================================');
+  console.log('filePath', filePath);
+  console.log('====================================');
   try {
     const source = await fs.readFile(filePath, "utf8");
     return source;

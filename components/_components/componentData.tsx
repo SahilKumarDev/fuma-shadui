@@ -8,17 +8,23 @@ import { Separator } from "../ui/separator";
 import { CodeBlock } from "./codeblock";
 
 const ComponentData = async ({
+  collection,
   directory,
   componentName,
 }: {
+  collection: string;
   directory: string;
   componentName: string;
   className?: string;
 }) => {
   const Component = (
-    await import(`@/data/components/${directory}/${componentName}`)
+    await import(`@/data/${collection}/${directory}/${componentName}`)
   ).default;
-  const source = await readComponentSource(directory, componentName);
+  const source = await readComponentSource(
+    collection,
+    directory,
+    componentName
+  );
   const capitalizeComponentName =
     componentName.charAt(0).toUpperCase() + componentName.slice(1);
 
@@ -54,7 +60,7 @@ const ComponentData = async ({
         <CardContent className="py-4">
           <TabsContent
             value="preview"
-            className="flex items-center justify-center py-10"
+            className="flex items-center justify-center py-10" 
           >
             <Component />
           </TabsContent>
