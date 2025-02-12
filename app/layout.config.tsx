@@ -1,3 +1,4 @@
+import { RiHome2Line } from '@remixicon/react';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
 /**
@@ -9,8 +10,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    // can be JSX too!
-    title: 'My App',
+    title: <RiHome2Line />,
   },
   links: [
     {

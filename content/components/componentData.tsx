@@ -1,11 +1,11 @@
 import React from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
 import { readComponentSource } from "@/lib/readComponentSource";
-import { TheamToggler } from "../theam/TheamToggler";
-import { Separator } from "../ui/separator";
-import { CodeBlock } from "./codeblock";
+import { TheamToggler } from "../../components/theam/TheamToggler";
+import { Separator } from "../../components/ui/separator";
+import { CodeBlock } from "../../components/_components/codeblock";
 
 const ComponentData = async ({
   collection,
